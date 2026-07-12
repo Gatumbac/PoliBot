@@ -13,8 +13,8 @@ y cada comando v1 devuelve una respuesta clara o un fallback controlado.
 
 ## Fase 2: Conversación natural
 
-- Crear `wf_ai_intent_router` para convertir consultas libres en intención,
-  parámetros, confianza y necesidad de aclaración.
+- `wf_ai_intent_router` está conectado y validado con una consulta real de
+  tareas semanales usando Gemini.
 - Validar el JSON antes de llamar workflows de Canvas.
 - Mantener comandos exactos como ruta rápida y fallback estable.
 

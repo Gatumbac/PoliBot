@@ -15,6 +15,9 @@ simuladas; falta publicar el router y realizar la validación final con Telegram
 - [Arquitectura de PoliBot v1](docs/architecture/polibot-v1.md)
 - [Visión del ESPOL Academic Intelligence Agent](docs/product/espol-academic-agent.md)
 - [Estado de implementación](docs/operations/implementation-status.md)
+- [Router de intención con IA](docs/operations/ai-intent-router.md)
+- [Router de intención con IA](docs/operations/ai-intent-router.md)
+- [Router de intención con IA](docs/operations/ai-intent-router.md)
 - [Roadmap](docs/plans/roadmap.md)
 - [Guía de contribución](AGENTS.md)
 

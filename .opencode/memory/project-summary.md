@@ -3,11 +3,11 @@
 **Last updated**: 2026-07-12
 
 ## Estado actual
-- **En progreso**: Validación final y preparación de publicación de PoliBot v1
+- **En progreso**: Validación de cobertura de intenciones naturales de PoliBot
 - **Bloqueado**: Ninguno
-- **Próximo**: Publicar `wf_telegram_router` y validar comandos reales desde Telegram
+- **Próximo**: Probar y ajustar las intenciones `/hoy`, `/proximas`, ayuda, estado y ambigüedad
 
 ## Cambios recientes
-- Se crearon `wf_telegram_router`, `wf_cmd_static` y `wf_cmd_canvas_queries`
-- Se validaron `/ayuda`, `hola` y el formato de tareas con pruebas simuladas
-- Se corrigió la configuración explícita de `Telegram Reply`
+- Se publicó `wf_telegram_router` y responde mensajes reales por Telegram
+- Se integró `wf_ai_intent_router` con Gemini 3.1 Flash-Lite para lenguaje natural
+- La IA clasifica tareas semanales y enruta la consulta a Canvas correctamente

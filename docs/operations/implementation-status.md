@@ -10,6 +10,7 @@
 | `wf_telegram_router` | `vAaVfPUfv6tcyMrV` | Recibe Telegram, clasifica y responde | Pendiente de publicar |
 | `wf_cmd_static` | `iSTRgndQX0SeWvmS` | `/start`, `/ayuda`, `/estado` | Sub-workflow |
 | `wf_cmd_canvas_queries` | `ymE59cw5zVBWiktC` | `/hoy`, `/semana`, `/proximas` | Sub-workflow |
+| `wf_ai_intent_router` | `gxOo4vRoILK2jnEi` | Lenguaje natural a intención validada | Conectado al router |
 | `PoliBot_Inicial` | `bJG32QZhycbFenCh` | Referencia del MVP anterior | Mantener inactivo |
 
 ## Validado
@@ -22,6 +23,10 @@
   `PoliBot_Inicial`.
 - Las respuestas de error de Canvas evitan exponer detalles técnicos al usuario.
 - `Telegram Reply` está configurado explícitamente para enviar mensajes.
+- El router de IA transforma una intención simulada `canvas_tasks/week` en
+  `route: canvas` y `/semana`.
+- Una prueba real de Gemini clasificó “¿Qué tareas tengo que entregar esta
+  semana?” y el router devolvió las tareas Canvas correspondientes.
 
 ## Operación
 
@@ -35,3 +40,5 @@ mensaje al webhook de n8n y el router invocará los sub-workflows. Mantenga
 2. Probar desde Telegram `/start`, `/ayuda`, `/hoy`, `/semana`, `/proximas` y
    un mensaje no reconocido.
 3. Revisar las ejecuciones de n8n y confirmar el fallback de Canvas.
+4. Evaluar frases naturales para tareas de hoy, semana, próximas, ayuda, estado
+   y mensajes ambiguos antes de añadir nuevas intenciones.

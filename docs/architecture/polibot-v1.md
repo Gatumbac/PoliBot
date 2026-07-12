@@ -38,9 +38,10 @@ presenta fechas en `America/Guayaquil`.
 
 ## Capa de IA futura
 
-La IA debe añadirse como **router de intención**, no como fuente de datos ni
-como ejecutor directo de acciones. Recibe lenguaje natural y devuelve JSON
-validable:
+`wf_ai_intent_router` (`gxOo4vRoILK2jnEi`) implementa el router de intención
+y está conectado a la ruta de lenguaje natural de `wf_telegram_router`. La IA
+es un **router de intención**, no una fuente de datos ni un ejecutor directo de
+acciones. Recibe lenguaje natural y devuelve JSON validable:
 
 ```json
 {
@@ -55,6 +56,10 @@ El workflow valida la intención y llama una herramienta determinista. Si la
 confianza es baja, pregunta al usuario; no inventa tareas ni accede a
 credenciales. Las reglas actuales se conservan como ruta rápida para comandos
 conocidos.
+
+El contrato de salida solo permite `static`, `canvas` o `clarify`. Las rutas
+`static` y `canvas` devuelven un comando canónico; `clarify` devuelve una
+pregunta. Esto evita que una clasificación incompleta active Canvas.
 
 ## Guardrails y observabilidad
 
