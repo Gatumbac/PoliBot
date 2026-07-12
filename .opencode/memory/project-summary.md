@@ -3,13 +3,11 @@
 **Last updated**: 2026-07-12
 
 ## Estado actual
-- **En progreso**: Definición de siguiente paso de arquitectura tras limpiar warnings del workflow MVP
-- **Bloqueado**: ninguno
-- **Próximo**: Agregar ruteo por comandos (ej. `/week`) sin tocar aún Canvas
+- **En progreso**: Validación final y preparación de publicación de PoliBot v1
+- **Bloqueado**: Ninguno
+- **Próximo**: Publicar `wf_telegram_router` y validar comandos reales desde Telegram
 
 ## Cambios recientes
-- Se implementó MVP Telegram -> Canvas -> Telegram en `EspolAgent`
-- Se corrigió parsing de fechas usando `assignment.due_at`
-- Se ajustó timezone a `America/Guayaquil`
-- Se restauró nodo `Build Fallback Reply`
-- Se limpió warning de `Telegram Reply` dejando `resource=message` y `operation=sendMessage`
+- Se crearon `wf_telegram_router`, `wf_cmd_static` y `wf_cmd_canvas_queries`
+- Se validaron `/ayuda`, `hola` y el formato de tareas con pruebas simuladas
+- Se corrigió la configuración explícita de `Telegram Reply`
