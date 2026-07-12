@@ -6,9 +6,11 @@ This repository currently tracks the design and operating state of PoliBot, an
 ESPOL academic assistant orchestrated in n8n. It does not yet contain exported
 n8n workflows, application source code, or automated tests.
 
-- `ESPOL_Academic_Agent.md` is the product and architecture specification.
-- `espol-agent-progress.md` records the implemented MVP, workflow ID, and
-  verified behavior. Update it when workflow behavior changes.
+- `docs/product/espol-academic-agent.md` is the product specification.
+- `docs/architecture/` records workflow design and integration contracts.
+- `docs/operations/implementation-status.md` records the implemented MVP,
+  workflow IDs, and verified behavior. Update it when workflow behavior changes.
+- `docs/plans/` contains the staged delivery plan and exit criteria.
 - `README.md` is the short project entry point.
 - `.opencode/memory/` is local working memory; keep it untracked and do not
   treat it as product documentation.

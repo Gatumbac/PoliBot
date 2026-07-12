@@ -1,4 +1,7 @@
 # ESPOL Academic Intelligence Agent
+
+> Documento de visión y alcance del producto. La arquitectura operativa actual
+> se documenta en [`docs/architecture/polibot-v1.md`](../architecture/polibot-v1.md).
 ### Proyecto para la Semana CIAP 2026 — Club de Inteligencia Artificial ESPOL
 
 ---
