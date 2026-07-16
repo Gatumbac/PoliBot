@@ -35,6 +35,11 @@ Workflows archivados de limpieza operativa: `PoliBot_Inicial` y `Test`.
   - `¿Sigues funcionando?` -> `static_status` -> `/estado` en la ejecución `367`.
   - `¿Qué tengo para próximas semanas?` -> `canvas_tasks/upcoming` -> `/proximas` en la ejecución `368`.
   - `¿Qué tengo que entregar hoy o esta semana?` -> aclaración accionable en la ejecución `369`.
+- Variaciones coloquiales adicionales validadas en el router de IA:
+  - `¿Qué me toca hoy?` -> `canvas_tasks/today` -> `/hoy` en la ejecución `381`.
+  - `¿Qué tengo pendiente esta semana?` -> `canvas_tasks/week` -> `/semana` en la ejecución `382`.
+  - `¿Qué viene para la próxima semana?` -> `canvas_tasks/week` -> `/semana` en la ejecución `383`.
+  - `¿Qué tengo que entregar hoy o esta semana?` -> aclaración accionable en la ejecución `384`.
 - El formato de tareas conserva el encabezado y marcador horario de
   `PoliBot_Inicial`.
 - Las respuestas de error de Canvas evitan exponer detalles técnicos al usuario.
@@ -59,5 +64,5 @@ que delega a sub-workflows y responde por `Telegram Reply`. Mantenga
 
 ## Pendiente inmediato
 
-1. Expandir validación de frases naturales para variaciones de hoy, próxima
-   semana y otras formulaciones coloquiales antes de agregar nuevas intenciones.
+1. Expandir validación de frases naturales para consultas de Canvas fuera de
+   hoy, semana y próximas antes de agregar nuevas intenciones.
