@@ -1,6 +1,6 @@
 # Estado de Implementación
 
-**Fecha**: 2026-07-14  
+**Fecha**: 2026-07-16  
 **Entorno**: n8n personal, Telegram y Canvas LMS
 
 ## Workflows v1
@@ -11,14 +11,30 @@
 | `wf_cmd_static` | `iSTRgndQX0SeWvmS` | `/start`, `/ayuda`, `/estado` | Sub-workflow |
 | `wf_cmd_canvas_queries` | `ymE59cw5zVBWiktC` | `/hoy`, `/semana`, `/proximas` | Sub-workflow |
 | `wf_ai_intent_router` | `gxOo4vRoILK2jnEi` | Lenguaje natural a intención validada | Conectado al router |
-| `PoliBot_Inicial` | `bJG32QZhycbFenCh` | Referencia del MVP anterior | Mantener inactivo |
+| `PoliBot_Inicial` | `bJG32QZhycbFenCh` | Referencia del MVP anterior | Archivado |
+
+Workflows archivados de limpieza operativa: `PoliBot_Inicial` y `Test`.
 
 ## Validado
 
 - `hola` y saludos equivalentes se convierten en la intención `/start`.
 - `/ayuda` devuelve el catálogo de comandos.
+- Batería mínima E2E cerrada por webhook el 2026-07-15:
+  - `/start` validado en la ejecución `304` y respondió con la presentación del bot.
+  - `/estado` validado en la ejecución `306` y respondió con el estado operativo.
+  - `/hoy` validado en la ejecución `308` y devolvió tareas reales de Canvas.
+  - `/semana` validado en la ejecución `310` y devolvió tareas reales de Canvas.
+  - Mensaje ambiguo validado en la ejecución `320` y respondió con una aclaración accionable.
 - `/semana` obtiene tareas Canvas, prioriza `assignment.due_at` y usa
   `America/Guayaquil`.
+- `wf_cmd_canvas_queries` maneja `429` de Canvas con reintento interno y
+  mensaje controlado para Telegram; verificado con simulación en la ejecución
+  `322`.
+- Cobertura de lenguaje natural validada en el router de IA:
+  - `¿Cómo uso el bot?` -> `static_help` -> `/ayuda` en la ejecución `366`.
+  - `¿Sigues funcionando?` -> `static_status` -> `/estado` en la ejecución `367`.
+  - `¿Qué tengo para próximas semanas?` -> `canvas_tasks/upcoming` -> `/proximas` en la ejecución `368`.
+  - `¿Qué tengo que entregar hoy o esta semana?` -> aclaración accionable en la ejecución `369`.
 - El formato de tareas conserva el encabezado y marcador horario de
   `PoliBot_Inicial`.
 - Las respuestas de error de Canvas evitan exponer detalles técnicos al usuario.
@@ -39,15 +55,9 @@
 `wf_telegram_router` ya está activo en producción (`active: true`) y recibe
 mensajes por webhook en modo `webhook`. Telegram envía cada mensaje al router,
 que delega a sub-workflows y responde por `Telegram Reply`. Mantenga
-`PoliBot_Inicial` inactivo para evitar competir por el mismo bot.
+`PoliBot_Inicial` archivado para evitar competir por el mismo bot.
 
 ## Pendiente inmediato
 
-1. Completar evidencia webhook de `/start`, `/estado`, `/hoy` y `/semana` en
-   la misma ventana de validación para cerrar la batería mínima E2E.
-2. Ejecutar pruebas de mensajes ambiguos/no reconocidos y confirmar que la
-   respuesta de aclaración sea consistente y accionable.
-3. Implementar manejo explícito de `429` y reintentos/backoff en
-   `wf_cmd_canvas_queries` para robustez de producción.
-4. Expandir validación de frases naturales para hoy, próximas, ayuda, estado y
-   ambigüedad antes de agregar nuevas intenciones.
+1. Expandir validación de frases naturales para variaciones de hoy, próxima
+   semana y otras formulaciones coloquiales antes de agregar nuevas intenciones.
