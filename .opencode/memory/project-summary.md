@@ -3,9 +3,9 @@
 **Last updated**: 2026-07-16
 
 ## Estado actual
-- **En progreso**: Validación de consultas Canvas coloquiales
+- **En progreso**: Planificación de la fase 3
 - **Bloqueado**: Ninguno
-- **Próximo**: Probar frases genéricas de pendientes y seguimiento
+- **Próximo**: Definir el alcance del Hito 1 de fase 3
 
 ## Cambios recientes
 - Se publicó `wf_telegram_router` y responde mensajes reales por Telegram
@@ -18,3 +18,4 @@
 - Se archivó el workflow genérico `Test`
 - Se validaron variaciones coloquiales de hoy, semana y próxima semana en el router de IA
 - Se validaron frases genéricas de pendientes y seguimiento en el router de IA
+- Se creó el plan detallado de implementación de fase 3

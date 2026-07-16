@@ -29,6 +29,8 @@ semana” sin permitir que el modelo invente datos o elija credenciales.
 - Añadir contexto de sílabos mediante RAG, con fuentes citables.
 - Incorporar memoria breve por `chatId`, separada de los datos académicos.
 
+Plan detallado: [Fase 3 - Implementación](fase-3-implementation.md)
+
 ## Fase 4: Acciones y multiusuario
 
 - Integrar Google Calendar con confirmación explícita antes de crear eventos.
