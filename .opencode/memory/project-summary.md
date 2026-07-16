@@ -5,7 +5,7 @@
 ## Estado actual
 - **En progreso**: Validación de consultas Canvas coloquiales
 - **Bloqueado**: Ninguno
-- **Próximo**: Probar frases fuera de hoy, semana y próximas
+- **Próximo**: Probar frases genéricas de pendientes y seguimiento
 
 ## Cambios recientes
 - Se publicó `wf_telegram_router` y responde mensajes reales por Telegram
@@ -17,3 +17,4 @@
 - Se archivó `PoliBot_Inicial` para dejar solo el stack v1 activo
 - Se archivó el workflow genérico `Test`
 - Se validaron variaciones coloquiales de hoy, semana y próxima semana en el router de IA
+- Se validaron frases genéricas de pendientes y seguimiento en el router de IA
