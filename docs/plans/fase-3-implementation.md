@@ -49,6 +49,8 @@ Antes de implementar la fase 3, hay que tener cerrados estos puntos:
 
 ## Hito 1 - Resumen y priorización de tareas
 
+**Estado**: implementado en `wf_cmd_canvas_queries` y publicado en producción.
+
 ### Objetivo
 
 Convertir la consulta de tareas en una respuesta con orden de ejecución y
@@ -66,6 +68,12 @@ justificación breve.
   - motivo breve.
 - Limitar el número de tareas mostradas para mantener legibilidad.
 - Mantener el formato horario de `America/Guayaquil`.
+
+La propuesta detallada del hito está en [Fase 3 - Hito 1: propuesta de
+implementación](fase-3-hito-1-proposal.md).
+
+La validación operativa del hito quedó cerrada con la salida priorizada ya
+visible por Telegram; el siguiente trabajo de fase 3 debe partir del Hito 2.
 
 ### Criterio de salida
 
@@ -219,3 +227,8 @@ probadas por Telegram y documentadas con evidencia operativa.
 La fase 3 no debe empezar como “todo a la vez”. Debe arrancar por el Hito 1 y
 bloquear el avance a los siguientes hitos hasta que el contrato de salida del
 hito actual esté validado.
+
+## Estado actual
+
+El Hito 1 ya está cerrado. La prioridad inmediata pasa a definir el Hito 2:
+fuente de sílabos, contrato de ingesta y formato de citas.

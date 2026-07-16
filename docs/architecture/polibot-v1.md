@@ -33,8 +33,10 @@ respuesta para que el router la entregue.
 | Cualquier otra entrada | Router | Solicita usar `/ayuda` |
 
 Canvas se consulta con credenciales de n8n, nunca con tokens en nodos Code. El
-formateador usa `assignment.due_at || due_at`, limita la salida a 15 tareas y
-presenta fechas en `America/Guayaquil`.
+formateador usa `assignment.due_at || due_at`, calcula una prioridad determinista,
+limita la salida a 10 tareas y presenta fechas en `America/Guayaquil`. La salida
+incluye `priority`, `reason`, `total_count` y `displayed_count` para indicar la
+urgencia y si quedaron tareas fuera del límite.
 
 ## Capa de IA futura
 

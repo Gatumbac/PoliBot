@@ -3,9 +3,9 @@
 **Last updated**: 2026-07-16
 
 ## Estado actual
-- **En progreso**: Planificación de la fase 3
+- **En progreso**: Arranque del Hito 2 de la fase 3
 - **Bloqueado**: Ninguno
-- **Próximo**: Definir el alcance del Hito 1 de fase 3
+- **Próximo**: Definir la fuente de sílabos, el contrato de ingesta y las citas del Hito 2
 
 ## Cambios recientes
 - Se publicó `wf_telegram_router` y responde mensajes reales por Telegram
@@ -19,3 +19,4 @@
 - Se validaron variaciones coloquiales de hoy, semana y próxima semana en el router de IA
 - Se validaron frases genéricas de pendientes y seguimiento en el router de IA
 - Se creó el plan detallado de implementación de fase 3
+- Se implementó, publicó y cerró el Hito 1 de fase 3 con priorización determinista de tareas Canvas

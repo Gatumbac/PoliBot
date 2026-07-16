@@ -9,7 +9,7 @@
 | --- | --- | --- | --- |
 | `wf_telegram_router` | `vAaVfPUfv6tcyMrV` | Recibe Telegram, clasifica y responde | Activo en producción |
 | `wf_cmd_static` | `iSTRgndQX0SeWvmS` | `/start`, `/ayuda`, `/estado` | Sub-workflow |
-| `wf_cmd_canvas_queries` | `ymE59cw5zVBWiktC` | `/hoy`, `/semana`, `/proximas` | Sub-workflow |
+| `wf_cmd_canvas_queries` | `ymE59cw5zVBWiktC` | `/hoy`, `/semana`, `/proximas` | Sub-workflow con Hito 1 publicado y cerrado |
 | `wf_ai_intent_router` | `gxOo4vRoILK2jnEi` | Lenguaje natural a intención validada | Conectado al router |
 | `PoliBot_Inicial` | `bJG32QZhycbFenCh` | Referencia del MVP anterior | Archivado |
 
@@ -45,6 +45,14 @@ Workflows archivados de limpieza operativa: `PoliBot_Inicial` y `Test`.
   - `¿Qué tengo para después?` -> `canvas_tasks/upcoming` -> `/proximas` en la ejecución `386`.
   - `¿Qué entrego?` -> `canvas_tasks/upcoming` -> `/proximas` en la ejecución `387`.
   - `¿Qué tareas me faltan?` -> `canvas_tasks/upcoming` -> `/proximas` en la ejecución `388`.
+- Hito 1 implementado en `wf_cmd_canvas_queries` y verificado con datos
+  sanitizados fijados en n8n: `/semana` en la ejecución `391`, `/hoy` en `392` y
+  `/proximas` en `393`. Las pruebas cubren orden crítico, alta, media y baja;
+  tareas sin fecha visibles al final; exclusión de una tarea marcada como
+  completada; conteos `received_count`, `discarded_count`, `total_count` y
+  `displayed_count`; límite de 10; y fechas en `America/Guayaquil`.
+- El Hito 1 quedó publicado en `wf_cmd_canvas_queries` y validado desde
+  Telegram con el formato priorizado visible para el usuario final.
 - El formato de tareas conserva el encabezado y marcador horario de
   `PoliBot_Inicial`.
 - Las respuestas de error de Canvas evitan exponer detalles técnicos al usuario.
@@ -69,6 +77,7 @@ que delega a sub-workflows y responde por `Telegram Reply`. Mantenga
 
 ## Pendiente inmediato
 
-1. Expandir validación de frases naturales para consultas de Canvas fuera de
-   hoy, semana, próximas y formulaciones genéricas de pendientes antes de
-   agregar nuevas intenciones.
+1. Arrancar el Hito 2 de fase 3: definir la fuente de sílabos, el formato de
+   ingesta y el contrato de citas.
+2. Resolver la decisión de almacenamiento para la memoria breve por `chatId`
+   antes de integrar más rutas académicas.

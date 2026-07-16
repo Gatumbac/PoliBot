@@ -28,6 +28,8 @@ semana” sin permitir que el modelo invente datos o elija credenciales.
 - Resumir y priorizar tareas usando datos obtenidos de Canvas.
 - Añadir contexto de sílabos mediante RAG, con fuentes citables.
 - Incorporar memoria breve por `chatId`, separada de los datos académicos.
+- El Hito 1 de priorización ya quedó implementado y publicado; el siguiente
+  paso de esta fase es definir el Hito 2 sobre sílabos y trazabilidad.
 
 Plan detallado: [Fase 3 - Implementación](fase-3-implementation.md)
 
