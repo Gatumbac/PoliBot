@@ -2,18 +2,20 @@
 
 ## Fase 1: MVP confiable
 
-**Estado**: implementación terminada; pendiente de publicación.
+**Estado**: completada; router activo en producción.
 
-- Publicar `wf_telegram_router`.
+- `wf_telegram_router` está activo en producción y recibe mensajes por webhook.
 - Validar comandos y fallback con Telegram y Canvas reales.
 - Añadir control de reintentos o cooldown para respuestas 429 de Canvas.
 
 **Criterio de salida**: un mensaje de Telegram activa automáticamente el router
-y cada comando v1 devuelve una respuesta clara o un fallback controlado.
+y cada comando v1 devuelve una respuesta clara o un fallback controlado. Este
+criterio ya quedó cubierto por las validaciones documentadas en
+`docs/operations/implementation-status.md`.
 
 ## Fase 2: Conversación natural
 
-- `wf_ai_intent_router` está conectado y validado con una consulta real de
+- `wf_ai_intent_router` está conectado y validado con consultas reales de
   tareas semanales usando Gemini.
 - Validar el JSON antes de llamar workflows de Canvas.
 - Mantener comandos exactos como ruta rápida y fallback estable.
